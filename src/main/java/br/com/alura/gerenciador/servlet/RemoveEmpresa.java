@@ -1,6 +1,8 @@
 package br.com.alura.gerenciador.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,8 +16,17 @@ import javax.servlet.http.HttpServletResponse;
 public class RemoveEmpresa extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String paramId = request.getParameter("id");
+		
+		Integer id = Integer.valueOf(paramId);
+		
+		System.out.println(id);
+		
+		Banco banco = new Banco();
+		banco.removeEmpresa(id);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/empresaRemovida.jsp");
+		rd.forward(request, response);
 	}
 
 }

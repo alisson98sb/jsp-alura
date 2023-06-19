@@ -13,7 +13,7 @@
 	Lista de empresas: <br />
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">
-			<li>${empresa.nome } <a href="/gerenciador/removeEmpresa">Excluir</a> </li>
+			<li>${empresa.nome } <a href="/gerenciador/removeEmpresa?id=${empresa.id}">Excluir</a> </li>
 		</c:forEach>
 	</ul>
 </body>
