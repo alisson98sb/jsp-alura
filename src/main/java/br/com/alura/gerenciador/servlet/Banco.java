@@ -57,4 +57,10 @@ public class Banco {
 		return null;
 	}
 
+	public Empresa updateEmpresa(Integer empresaId, String empresaNome) {
+		Empresa empresa = this.getEmpresa(empresaId);
+		empresa.setNome(empresaNome);
+		return empresa;
+	}
+
 }

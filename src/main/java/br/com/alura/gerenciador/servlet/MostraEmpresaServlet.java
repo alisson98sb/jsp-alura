@@ -20,8 +20,7 @@ public class MostraEmpresaServlet extends HttpServlet {
 		
 		Banco banco = new Banco();
 		Empresa emp = banco.getEmpresa(id);
-		
-		System.out.println("OK");
+
 		
 		request.setAttribute("empresa", emp);
 		RequestDispatcher rd = request.getRequestDispatcher("/mostraEmpresa.jsp");
