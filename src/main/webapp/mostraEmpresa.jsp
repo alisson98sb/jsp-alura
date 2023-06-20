@@ -10,8 +10,8 @@
 	Editar empresa: ${empresa.nome}
 	
 	<form action="/gerenciador/alteraEmpresa" method="post">
-		Identificação unica: <input type="text" name="id" value="${empresa.id}" /> 
 		Nome: <input type="text" name="nome" value="${empresa.nome}" />
+		<input type="hidden" name="id" value="${empresa.id}" /> 
 		<input type="submit" />
 	</form> 
 
