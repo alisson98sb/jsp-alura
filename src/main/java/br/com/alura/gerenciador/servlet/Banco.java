@@ -27,7 +27,7 @@ public class Banco {
 	public void adiciona(Empresa empresa) {
 		Banco.lista.add(empresa);
 		empresa.setId(id++);
-		System.out.println("Empresa " + empresa + " cadastrada com sucesso! ");
+	
 	}
 	
 	//Publica, pois vai ser o metodo que retorna as informações de list a quem quiser importar.
@@ -46,6 +46,21 @@ public class Banco {
 			}
 		}
 		
+	}
+
+	public Empresa getEmpresa(Integer empresaId) {
+		for(Empresa empresa : lista) {
+			if(empresa.getId() == empresaId) {
+				return empresa;
+			}
+		}
+		return null;
+	}
+
+	public Empresa updateEmpresa(Integer empresaId, String empresaNome) {
+		Empresa empresa = this.getEmpresa(empresaId);
+		empresa.setNome(empresaNome);
+		return empresa;
 	}
 
 }
